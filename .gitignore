@@ -26,6 +26,7 @@ deploy.*
 !/config/migrations.php
 !/config/migrations.upgrades.php
 !/config/api_sample.php
+!/config/api.php
 
 # PHPUnit
 /phpunit.xml
