@@ -24,3 +24,23 @@ steps:
 
 - script: composer install --no-interaction --prefer-dist
   displayName: 'composer install'
+
+- task: ArchiveFiles@1
+  displayName: Archive files
+  inputs:
+    rootFolder: $(System.DefaultWorkingDirectory)
+    includeRootFolder: false
+    archiveType: default
+
+- task: PublishBuildArtifacts@1
+  displayName: Publish Artifact
+  inputs:
+    PathtoPublish:  $(build.artifactstagingdirectory)
+
+- task: AzureWebApp@1
+  displayName: Azure Web App Deploy
+  inputs:
+    azureSubscription: $(serviceConnectionToAzure)
+    appType: webAppLinux
+    appName: $(appName)
+    package: $(build.artifactstagingdirectory)/**/*.zip
