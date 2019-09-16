@@ -39,7 +39,7 @@ RUN chown -R www-data:www-data /var/www \
  && chmod -R +x /var/www/ssh_setup.sh \
  && (sleep 1;/var/www/ssh_setup.sh 2>&1 > /dev/null) \
 # remove extraneous files
- && rm -f /var/www/.git /var/www/.gitignore /var/www/Dockerfile /var/www/azure-pipelines.yml /var/www/ssh_setup.sh
+ && rm -rf /var/www/.git /var/www/.gitignore /var/www/Dockerfile /var/www/azure-pipelines.yml /var/www/ssh_setup.sh
 
 COPY dockerfs/ /
 RUN chmod u+x /usr/local/bin/init.sh
