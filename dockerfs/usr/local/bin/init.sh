@@ -21,8 +21,8 @@ sed -i "s/SSH_PORT/$SSH_PORT/g" /etc/ssh/sshd_config
 /usr/sbin/sshd
 
 # create symlinks for persistent data
-cp -a /var/www/public /home/site/ && rm -rf /var/www/public
-ln -s /home/site/public /var/www/
+cp -a /var/www/public /home/site/wwwroot && rm -rf /var/www/public
+ln -s /home/site/wwwroot/public /var/www/
 
 # first arg is `-f` or `--some-option`
 if [ "${1#-}" != "$1" ]; then
