@@ -1,5 +1,5 @@
 <?php
 
-$app = require __DIR__ . '/../src/web.php';
+$app = require dirname($_SERVER["SCRIPT_FILENAME"]) . '/src/web.php';
 
 $app->run();
