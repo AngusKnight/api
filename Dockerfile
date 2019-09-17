@@ -8,8 +8,10 @@ RUN apt-get update -y \
  && apt-get install -y --no-install-recommends \
         git \
         libcurl4-gnutls-dev \
+        libfreetype6-dev \
+        libjpeg-dev \
         libpng-dev \
-        libmagickwand-dev \
+        libwebp-dev \
         libxml2-dev \
         libzip-dev \
         openssh-server \
@@ -28,10 +30,8 @@ RUN apt-get update -y \
 # install PHP APCu extension
  && yes '' | pecl install apcu \
  && docker-php-ext-enable apcu \
-# install PHP ImageMagick extension
- && yes '' | pecl install imagick \
- && docker-php-ext-enable imagick \
 # https://docs.directus.io/getting-started/installation.html#requirements
+ && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
  && docker-php-ext-configure zip --with-libzip \
  && docker-php-ext-install curl exif fileinfo gd mbstring mysqli opcache pdo pdo_mysql zip \
 # configure OPcache
