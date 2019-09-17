@@ -28,14 +28,14 @@ return [
     ],
 
     'cache' => [
-        'enabled' => false,
+        'enabled' => true,
         'response_ttl' => 3600, // seconds
         // 'pool' => [
         //    'adapter' => 'apc'
         // ],
-        // 'pool' => [
-        //    'adapter' => 'apcu'
-        // ],
+        'pool' => [
+           'adapter' => 'apcu'
+        ],
         // 'pool' => [
         //    'adapter' => 'filesystem',
         //    'path' => '../cache/', // relative to the api directory
