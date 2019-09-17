@@ -9,6 +9,7 @@ RUN apt-get update -y \
         git \
         libcurl4-gnutls-dev \
         libpng-dev \
+        libmagickwand-dev \
         libxml2-dev \
         libzip-dev \
         openssh-server \
@@ -24,9 +25,12 @@ RUN apt-get update -y \
  && a2enmod rewrite \
 # configure PHP
  && mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini" \
-# install PHP APCu module
+# install PHP APCu extension
  && yes '' | pecl install apcu \
  && docker-php-ext-enable apcu \
+# install PHP ImageMagick extension
+ && yes '' | pecl install imagick \
+ && docker-php-ext-enable imagick \
 # https://docs.directus.io/getting-started/installation.html#requirements
  && docker-php-ext-configure zip --with-libzip \
  && docker-php-ext-install curl exif fileinfo gd mbstring mysqli opcache pdo pdo_mysql zip \
