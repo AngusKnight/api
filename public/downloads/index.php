@@ -1,11 +1,11 @@
 <?php
 
-require __DIR__ . '/../../vendor/autoload.php';
+require dirname(dirname(dirname($_SERVER["SCRIPT_FILENAME"]))) . '/vendor/autoload.php';
 
 use Directus\Util\ArrayUtils;
 use Directus\Filesystem\Thumbnailer;
 
-$basePath = realpath(__DIR__ . '/../../');
+$basePath = realpath(dirname(dirname(dirname($_SERVER["SCRIPT_FILENAME"]))));
 // Get Project name
 $projectName = \Directus\get_api_project_from_request();
 
