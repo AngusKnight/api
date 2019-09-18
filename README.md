@@ -1,3 +1,5 @@
+[![Build Status](https://dev.azure.com/angusknight/bandicoot/_apis/build/status/directus-api%20CI?branchName=build)](https://dev.azure.com/angusknight/bandicoot/_build/latest?definitionId=11&branchName=build)[![Deployment Status](https://vsrm.dev.azure.com/angusknight/_apis/public/Release/badge/84582ff0-03dc-4f44-b43b-417d54030765/3/5)](https://vsrm.dev.azure.com/angusknight/_apis/public/Release/badge/84582ff0-03dc-4f44-b43b-417d54030765/3/5)
+
 <p align="center">
   <a href="https://directus.io" target="_blank" rel="noopener noreferrer">
     <img src="https://user-images.githubusercontent.com/522079/43096167-3a1b1118-8e86-11e8-9fb2-7b4e3b1368bc.png" width="140" alt="Directus Logo"/>
