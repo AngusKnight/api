@@ -21,7 +21,7 @@ return [
         'password' => getenv("MYSQL_PASSWORD"),
         'engine' => 'InnoDB',
         'charset' => 'utf8mb4',
-        'options' => array(
+        'driver_options' => array(
             PDO::MYSQL_ATTR_SSL_CA => '/etc/ssl/certs/Baltimore_CyberTrust_Root.pem',
             PDO::MYSQL_ATTR_SSL_CAPATH => '/etc/ssl/certs',
             PDO::MYSQL_ATTR_SSL_CIPHER => 'AES256-SHA',
