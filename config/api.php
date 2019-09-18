@@ -24,7 +24,6 @@ return [
         'driver_options' => array(
             PDO::MYSQL_ATTR_SSL_CA => '/etc/ssl/certs/Baltimore_CyberTrust_Root.pem',
             PDO::MYSQL_ATTR_SSL_CAPATH => '/etc/ssl/certs',
-            PDO::MYSQL_ATTR_SSL_CIPHER => 'AES256-SHA',
             PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT => false,
         ),
     ],
