@@ -18,6 +18,7 @@ RUN apt-get update -y \
         openssl \
         procps \
         unzip \
+        vim \
         zip \
  && rm -rf /var/lib/apt/lists/* \
 # https://docs.microsoft.com/en-us/azure/app-service/containers/configure-custom-container#enable-ssh
