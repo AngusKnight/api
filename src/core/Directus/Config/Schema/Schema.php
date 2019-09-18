@@ -36,8 +36,9 @@ class Schema {
                 new Value('username', Types::STRING, 'root'),
                 new Value('password', Types::STRING, 'root'),
                 new Value('engine', Types::STRING, 'InnoDB'),
-                new Value('chartset', Types::STRING, 'utf8mb4'),
+                new Value('charset', Types::STRING, 'utf8mb4'),
                 new Value('socket', Types::STRING, ''),
+                new Value('driver_options', Types::ARRAY, []),
             ]),
             new Group('cache', [
                 new Value('enabled', Types::BOOLEAN, false),
