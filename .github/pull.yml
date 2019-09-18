@@ -2,5 +2,5 @@ version: "1"
 rules:
  - base: build
    upstream: api:build
-   mergeMethod: hardreset
+   mergeMethod: merge
 label: ":arrow_heading_down: pull"
