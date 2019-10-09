@@ -37,8 +37,7 @@ composer.lock
 !/public/extensions/custom/hashers/_CustomHasher.php
 
 ##  Hooks
-!/public/extensions/custom/hooks/_products
-!/public/extensions/custom/hooks/_webhook
+!/public/extensions/custom/hooks/*
 
 # Storage
 /public/uploads/*/
