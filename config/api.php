@@ -97,8 +97,13 @@ return [
 
     'mail' => [
         'default' => [
-            'transport' => 'sendmail',
-            'from' => 'admin@example.com'
+            'transport' => 'smtp',
+            'host' => getenv("SMTP_HOST"),
+            'port' => getenv("SMTP_PORT"),
+            'username' => getenv("SMTP_USERNAME"),
+            'password' => getenv("SMTP_PASSWORD"),
+            'encryption' => 'tls',
+            'from' => getenv("SMTP_FROM_ADDRESS")
         ],
     ],
 
