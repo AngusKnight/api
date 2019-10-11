@@ -36,7 +36,7 @@ RUN apt-get update -y \
  && docker-php-ext-configure zip --with-libzip \
  && docker-php-ext-install curl exif fileinfo gd mbstring mysqli opcache pdo pdo_mysql zip \
 # configure OPcache
- && echo "opcache.revalidate_freq=60" >> /usr/local/etc/php/conf.d/docker-php-ext-opcache.ini
+ && sed -i "s/;opcache.validate_timestamps=1/opcache.validate_timestamps=0" /usr/local/etc/php/php.ini
 
 COPY . /var/www/
 RUN chown -R www-data:www-data /var/www \
