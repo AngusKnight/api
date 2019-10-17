@@ -10,10 +10,29 @@ return [
             // Get all answers from DB
             $itemsService = new ItemsService($this);
 
-            $params = $request->getQueryParams();
-            $programs = $itemsService->findAll('products', $params);
+            $query = [
+                'filter' => [
+                    'sold' => ['=' => false]
+                    ]
+            ];
+            $results = $itemsService->findAll('artwork', $query);
+            $products = [];
+            foreach ($results['data'] as $value) {
+                $products[] = [
+                    'id' => $value['id'],
+                    'name' => $value['title'], 
+                    'description' => $value['description'],
+                    'price' => $value['price'],
+                    'image' => $value[''],
+                    'url' => '/products',
+                    'weight' => $value['weight'],
+                    'width' => $value['parcel_width'],
+                    'height' => $value['parcel_height'],
+                    'length' => $value['parcel_length']
+                ];
+            }
 
-            return $response->withJson($programs);
+            return $response->withJson($products);
         }
     ],
 ];
