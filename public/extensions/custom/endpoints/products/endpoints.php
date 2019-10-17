@@ -25,7 +25,7 @@ return [
                     'price' => $value['price'],
                     'image' => $value[''],
                     'url' => '/products',
-                    'weight' => $value['weight'],
+                    'weight' => $value['parcel_weight'],
                     'width' => $value['parcel_width'],
                     'height' => $value['parcel_height'],
                     'length' => $value['parcel_length']
