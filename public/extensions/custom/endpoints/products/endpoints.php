@@ -23,7 +23,6 @@ return [
                     'name' => $value['title'], 
                     'description' => $value['description'],
                     'price' => $value['price'],
-                    'image' => $value[''],
                     'url' => '/products',
                     'weight' => $value['parcel_weight'],
                     'width' => $value['parcel_width'],
