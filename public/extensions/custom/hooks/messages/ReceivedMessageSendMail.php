@@ -7,9 +7,8 @@ class ReceivedMessageSendMail
 {
     public function __invoke(array $data)
     {
-        $container = \Directus\Application\Application::getInstance()->getContainer();
-
         try {
+            $container = \Directus\Application\Application::getInstance()->getContainer();
             $email[] = [
                 'to' => 'borgosity@gmail.com',
                 'subject' => 'New Feedback Message', 
@@ -25,6 +24,7 @@ class ReceivedMessageSendMail
             $mailService->send($email);
         } 
         catch (\Exception $e) {
+            $container = \Directus\Application\Application::getInstance();
             $logger = $container->fromContainer('logger');
             $logger->error($e);
         }
